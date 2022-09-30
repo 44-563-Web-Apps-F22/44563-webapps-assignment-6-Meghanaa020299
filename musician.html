@@ -3,9 +3,7 @@
 <title>musician page</title>
 
 <body>
-
     <h2>Musician guess by Meghanaa Malleboina</h2>
-
     <form>
         <label for="form1_secret">Enter the secret musician name</label>
         <input id="form1_secret" name="form2_secret" type="password" min=10 max=50 step=2 value="John Lennon"> <br>
@@ -15,10 +13,7 @@
 
         <input type="button" onclick="checkGuess()" value="Check the guess">
     </form>
-
-
     <p id="result">Result is here</p>
-
     <script>
         var correct = 0;
         var wrong = 0;
@@ -28,19 +23,14 @@
             check = document.getElementById("form1_check").value
             if (secret == check) {
                 correct = correct + 1;
-
                 alert("You got it right");
             }
             else {
                 wrong = wrong + 1;
-
                 alert("Wrong Musician");
             }
             document.getElementById("result").innerHTML = "correct " + correct + "  wrong " + wrong;
         }
-
-
-
     </script>
 
 </body>
