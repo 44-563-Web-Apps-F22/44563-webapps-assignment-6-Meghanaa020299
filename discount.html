@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<title>discount page</title>
+
+<body>
+
+    <h2>Meghanaa Malleboina computes
+        discounts</h2>
+
+    <form>
+        <label for="elementid">Enter base amount </label>
+        <input type="number" id="elementid" value="20"> <br>
+
+        <label for="discountid">Enter the discount percentage</label>
+        <input type="number" id="discountid" value="10"> <br>
+
+        <input type="button" onclick="discount()" value="Apply discount">
+    </form>
+
+
+    <p id="result">This text will be replaced </p>
+
+    <script>
+        function discount() {
+            amount = document.getElementById("elementid").value
+            dis = document.getElementById("discountid").value
+            let result = ""
+            let i = 1
+            while (i < 6) {
+                disValue = amount * dis / 100
+                result += i * (amount - disValue) + " "
+                console.log(result)
+                i++
+            }
+            document.getElementById("result").innerHTML = result
+        }
+    </script>
+
+</body>
+
+</html>
