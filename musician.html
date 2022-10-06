@@ -11,7 +11,7 @@
         <label for="form1_check">Guess the musician</label>
         <input type id="form1_check" name="form1_check" type="text" autofocus> <br>
 
-        <input type="button" onclick="checkGuess()" value="Check the guess">
+        <input type="button" id="buton" onclick="checkGuess()" value="Check the guess">
     </form>
     <p id="result">Result is here</p>
     <script>
@@ -26,8 +26,19 @@
                 alert("You got it right");
             }
             else {
-                wrong = wrong + 1;
-                alert("Wrong Musician");
+                wrong += 1
+                if (wrong <= 3) {
+                    alert("Wrong Musician");
+                    if (wrong == 3) {
+                        document.getElementById("buton").onclick = function showGameOver() {
+                            alert("Sorry, game over.");
+                        }
+                    }
+                } else {
+                    document.getElementById("buton").onclick = function showGameOver() {
+                        alert("Sorry, game over.");
+                    }
+                }
             }
             document.getElementById("result").innerHTML = "correct " + correct + "  wrong " + wrong;
         }
